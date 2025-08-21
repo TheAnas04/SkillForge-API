@@ -1,4 +1,5 @@
 import express from "express";
+import { config } from "./config/env.js";
 
 const app = express();
 
@@ -8,6 +9,6 @@ app.get("/health", (req, res) => {
   res.status(200).json({message: "ok"});
 });
 
-app.listen(3000, ()=>{
+app.listen(config.PORT, ()=>{
   console.log("SkillForge API started...");
 });

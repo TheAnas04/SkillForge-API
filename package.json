@@ -1,8 +1,11 @@
 {
   "type": "module",
   "dependencies": {
+    "dotenv": "^17.2.1",
+    "env": "^0.0.2",
     "express": "^5.1.0",
-    "it": "^1.1.1"
+    "it": "^1.1.1",
+    "zod": "^4.0.17"
   },
   "scripts": {
     "lint": "eslint .",
