@@ -13,14 +13,14 @@ app.use(requestLogger);
 
 // health route
 app.get("/health", (req, res) => {
-  logger.info('health check');
-  res.status(200).json({message: "ok"});
+  logger.info("health check");
+  res.status(200).json({ message: "ok" });
 });
 
 // Error handlers
 app.use(notFoundHandler);
 app.use(errorHandler);
 
-app.listen(config.PORT, ()=>{
+app.listen(config.PORT, () => {
   console.log("SkillForge API started...");
 });
