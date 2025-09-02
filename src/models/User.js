@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../lib/sequelize";
+import sequelize from "../lib/sequelize.js";
 
 const User = sequelize.define("User", {
   id: {
@@ -28,7 +28,7 @@ const User = sequelize.define("User", {
     defaultValue: DataTypes.NOW,
   }
 }, {
-  tableName: "users",
+  tableName: "User",
   underscored: true,
 });
 

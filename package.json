@@ -17,7 +17,8 @@
     "lint:fix": "eslint . --fix",
     "db:migrate": "npx sequelize-cli db:migrate",
     "db:migration:generate": "npx sequelize-cli db:migration:generate --name",
-    "db:migrate:undo": "npx sequelize-cli db:migrate:undo"
+    "db:migrate:undo": "npx sequelize-cli db:migrate:undo",
+    "db:seed:all": "npx sequelize-cli db:seed:all"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
