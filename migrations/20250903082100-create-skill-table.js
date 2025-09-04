@@ -30,6 +30,16 @@ export default {
       is_deleted: {
         type: Sequelize.BOOLEAN,
         defaultValue: false,
+      },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal("NOW()"),
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.literal("NOW()"),
       }
     });
   },
