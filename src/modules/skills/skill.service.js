@@ -7,7 +7,8 @@ export const createSkill = async ({ name, description = null, userId, requestId 
   const isExist = await db.Skill.findOne({
     where: {
       user_id: userId,
-      name: { [Op.iLike]: name }
+      name: { [Op.iLike]: name },
+      is_deleted: false,
     }
   });
 
@@ -38,7 +39,13 @@ export const createSkill = async ({ name, description = null, userId, requestId 
 };
 
 export const getSkills = async ({ userId, requestId }) => {
-  const skills = await db.Skill.findAll({ where: { user_id: userId, is_deleted: false } });
+  const skills = await db.Skill.findAll({
+    where: {
+      user_id: userId,
+      is_deleted: false
+    }
+  });
+  
   if (!skills.length) {
     new AppError({
       status: 400,
