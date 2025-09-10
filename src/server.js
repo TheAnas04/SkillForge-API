@@ -4,7 +4,7 @@ import { requestIdMiddleware, requestLogger } from "./middleware/requestLogger.j
 import { logger } from "./lib/logger.js";
 import notFoundHandler from "./middleware/notFoundHandler.js";
 import errorHandler from "./middleware/errorHandler.js";
-
+import skillRouter from "./modules/skills/skill.route.js";
 const app = express();
 
 app.use(express.json());
@@ -16,6 +16,8 @@ app.get("/health", (req, res) => {
   logger.info("health check");
   res.status(200).json({ message: "ok" });
 });
+
+app.use("/skill", skillRouter);
 
 // Error handlers
 app.use(notFoundHandler);
